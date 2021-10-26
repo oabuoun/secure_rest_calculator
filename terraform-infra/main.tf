@@ -13,6 +13,7 @@ terraform {
   }
 }
 
+# @component CalcApp:VPC (#vpc)
 resource "aws_vpc" "cyber94_calculator_oabu_vpc_tf" {
   cidr_block = "10.0.0.0/16"
 
@@ -42,6 +43,7 @@ resource "aws_route_table" "cyber94_calculator_oabu_internet_rt_tf" {
   }
 }
 
+# @component CalcApp:VPC:Subnet (#subnet)
 resource "aws_subnet" "cyber94_calculator_oabu_subnet_public_tf" {
   vpc_id = aws_vpc.cyber94_calculator_oabu_vpc_tf.id
   cidr_block = "10.0.1.0/24"
@@ -158,6 +160,8 @@ resource "aws_security_group" "cyber94_calculator_oabu_sg_server_public_tf" {
   }
 }
 
+# @component CalcApp:Web:Server (#web_server)
+# @connects #subnet to #web_server with Network
 resource "aws_instance" "cyber94_calculator_oabu_server_public_tf" {
   ami = "ami-0943382e114f188e8"
   instance_type = "t2.micro"

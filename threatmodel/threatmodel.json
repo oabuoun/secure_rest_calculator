@@ -1,0 +1,39 @@
+{
+  "mitigations": [],
+  "exposures": [],
+  "transfers": [],
+  "acceptances": [],
+  "connections": [
+    {
+      "source_component": "#guest",
+      "destination_component": "#index",
+      "direction": "to",
+      "details": "HTTP-GET",
+      "description": "",
+      "custom": {},
+      "source": {
+        "annotation": "@connects #guest to #index with HTTP-GET",
+        "code": "# @connects #guest to #index with HTTP-GET\n@flask_app.route('/')\ndef index_page():\n    print(request.headers)\n    isUserLoggedIn = False\n    if 'token' in request.cookies:\n",
+        "filename": "/home/kali/cyber/projects/secure_rest_calculator/app/main.py",
+        "line": 1
+      }
+    },
+    {
+      "source_component": "#subnet",
+      "destination_component": "#web_server",
+      "direction": "to",
+      "details": "Network",
+      "description": "",
+      "custom": {},
+      "source": {
+        "annotation": "@connects #subnet to #web_server with Network",
+        "code": "# @connects #subnet to #web_server with Network\nresource \"aws_instance\" \"cyber94_calculator_oabu_server_public_tf\" {\n  ami = \"ami-0943382e114f188e8\"\n  instance_type = \"t2.micro\"\n  key_name = \"cyber-oabu-key\"\n  associate_public_ip_address = true\n",
+        "filename": "/home/kali/cyber/projects/secure_rest_calculator/terraform-infra/main.tf",
+        "line": 1
+      }
+    }
+  ],
+  "reviews": [],
+  "tests": [],
+  "run_id": "b6749d315a734cf7ae62499bf03ee0ce"
+}

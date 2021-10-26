@@ -7,6 +7,9 @@ import calc_functions as calc_functions
 SECRET_KEY = "C7E2F9D46E92DCF2234D18BEF8C6D"
 flask_app = Flask(__name__)
 
+# @component External:Guest (#guest)
+
+
 def verify_token(token):
     if token:
         decoded_token = jwt.decode(token, SECRET_KEY, "HS256")
@@ -17,9 +20,11 @@ def verify_token(token):
     else:
         return False
 
+# @component CalcApp:Web:Server:Index (#index)
+# @connects #guest to #index with HTTP-GET
 @flask_app.route('/')
 def index_page():
-    print(request.cookies)
+    print(request.headers)
     isUserLoggedIn = False
     if 'token' in request.cookies:
         isUserLoggedIn = verify_token(request.cookies['token'])

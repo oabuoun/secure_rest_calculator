@@ -1,0 +1,60 @@
+{
+  "components": {
+    "#guest": {
+      "id": "#guest",
+      "run_id": "b6749d315a734cf7ae62499bf03ee0ce",
+      "name": "External:Guest",
+      "description": "",
+      "paths": [
+        [
+          "External"
+        ],
+        []
+      ],
+      "custom": {}
+    },
+    "#index": {
+      "id": "#index",
+      "run_id": "b6749d315a734cf7ae62499bf03ee0ce",
+      "name": "CalcApp:Web:Server:Index",
+      "description": "",
+      "paths": [
+        [
+          "CalcApp",
+          "Web",
+          "Server"
+        ],
+        []
+      ],
+      "custom": {}
+    },
+    "#subnet": {
+      "id": "#subnet",
+      "run_id": "b6749d315a734cf7ae62499bf03ee0ce",
+      "name": "CalcApp:VPC:Subnet",
+      "description": "",
+      "paths": [
+        [
+          "CalcApp",
+          "VPC"
+        ],
+        []
+      ],
+      "custom": {}
+    },
+    "#web_server": {
+      "id": "#web_server",
+      "run_id": "b6749d315a734cf7ae62499bf03ee0ce",
+      "name": "CalcApp:Web:Server",
+      "description": "",
+      "paths": [
+        [
+          "CalcApp",
+          "Web"
+        ],
+        []
+      ],
+      "custom": {}
+    }
+  }
+}
