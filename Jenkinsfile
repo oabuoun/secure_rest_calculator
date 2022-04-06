@@ -18,7 +18,7 @@ pipeline {
     stage('Cloning The Code from GIT') {
       steps {
         git branch: 'main',
-        url: 'https://github.com/oabuoun/secure_rest_api_server.git'
+        url: 'git@github.com:oabuoun/secure_rest_calculator.git'
       }
     }
 
