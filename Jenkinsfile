@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    PROJECT_DIR = "/app"
+    PROJECT_DIR = "/app1"
     REGISTRY = "oabuoun/secure_rest_api" + ":" + "$BUILD_NUMBER"
     DOCKER_CREDENTIALS = "docker_auth"
     DOCKER_IMAGE = ""
