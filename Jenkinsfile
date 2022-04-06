@@ -19,7 +19,7 @@ pipeline {
       steps {
         credentialsId: 'secure_rest_calc',
         git branch: 'main',
-        url: 'git@github.com:oabuoun/secure_rest_calculator.git'
+        url: 'ssh://git@github.com:oabuoun/secure_rest_calculator.git'
       }
     }
 
