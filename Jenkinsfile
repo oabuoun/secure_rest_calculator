@@ -16,14 +16,11 @@ pipeline {
   stages {
 
     stage('Cloning The Code from GIT') {
-      steps {
-      git(
-         url: 'ssh://git@github.com:oabuoun/secure_rest_calculator.git'
-         credentialsId: 'secure_rest_calc',
-         branch: 'main',
-       )
 
-      }
+      checkout([
+        $class: 'GitSCM', branches: [[name: '*/main']],
+        userRemoteConfigs: [[url: 'git@github.com:oabuoun/secure_rest_calculator.git',credentialsId:'secure_rest_calc']]
+      ])
     }
 
     stage('Build-Image'){
