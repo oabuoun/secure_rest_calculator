@@ -17,6 +17,7 @@ pipeline {
 
     stage('Cloning The Code from GIT') {
       steps {
+        credentialsId: 'secure_rest_calc',
         git branch: 'main',
         url: 'git@github.com:oabuoun/secure_rest_calculator.git'
       }
