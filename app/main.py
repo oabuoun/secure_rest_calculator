@@ -10,6 +10,7 @@ flask_app = Flask(__name__)
 # @component External:Guest (#guest)
 
 
+
 def verify_token(token):
     if token:
         decoded_token = jwt.decode(token, SECRET_KEY, "HS256")
